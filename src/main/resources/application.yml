@@ -1,0 +1,48 @@
+spring:
+
+  application:
+    name: RegisterAndLogin
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/testdb2
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        column_ordering_strategy: legacy
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+
+  mail:
+    host: localhost
+    port: 1025
+    username: hello
+    password: hello
+    default-encoding: utf-8
+
+    properties:
+      verify:
+        host: http://localhost:8080
+      mail:
+        mime:
+          charset: utf
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
